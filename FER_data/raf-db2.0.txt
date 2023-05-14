@@ -1,0 +1,6 @@
+style:
+path_to_image.png<space>category
+
+for exsample:
+/path_to_image/001.png 0
+
