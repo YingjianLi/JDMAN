@@ -1,0 +1,34 @@
+python -u main.py \
+    -shuffle \
+    -aug \
+    -model vgg16 \
+    -pretrained your_path_to_pretrained_models/vgg16_bn-6c64b313.pth \
+    -train_list0 path_to_the_training_data/raf-db2.0.txt \
+    -train_list1 path_to_the_training_data/raf-db.txt \
+    -test_list1 path_to_the_testing_data/raf-db.txt \
+    -test_list2 path_to_the_testing_data/affectnet.txt \
+    -test_list3  path_to_the_testing_data/fer2013.txt \
+    -test_list4 path_to_the_testing_data/ck+_testing_only.txt \
+    -test_list5 path_to_the_testing_data/mmi.txt \
+    -test_list6 path_to_the_testing_data/jaffe.txt \
+    -test_list7 path_to_the_testing_data/oul-CASIA.txt \
+    -test_list8 path_to_the_testing_data/sfew.txt \
+    -test_list9 path_to_the_testing_data/balanced_ck+_training_only.txt \
+    -test_list10 path_to_the_testing_data/jaffe_add1.txt \
+    -save_path path_to_save_your_trained_models \
+    -criterion mc_loss_center \
+    -MI \
+    -lam 0.01 \
+    -train_data raf2 \
+    -target ck+ \
+    -test_data ck+ \
+    -output_classes 7 \
+    -n_epochs 60 \
+    -learn_rate 0.01 \
+    -batch_size 64 \
+    -fea_dim 4096 \
+    -workers 8 \
+    -nGPU 2 \
+    -decay 30 \
+    -log_path path_to_save_your_log_file \
+2>&1 | tee -a path_to_save_your_log_file/log_name.log
